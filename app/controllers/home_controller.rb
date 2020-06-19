@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
 
   def index
-    @animal = Animal.offset( rand(Animal.count) ).first
+    @question = Question.offset( rand(Question.count) ).first
 
-    @disp_hiragana = Hiragana.view(@animal)
+    @disp_katakana = Katakana.view(@question)
 
     @sounds = Sound.order("RANDOM()").limit(8)
   end

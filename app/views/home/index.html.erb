@@ -3,10 +3,10 @@
     <form id="chars">
       <div class="uper_area">
         <div class="image-window">
-          <%= image_tag @animal[:animal_image_file_name], class: 'animal_image' %>
+          <%= image_tag @question[:questions_image_file_name], class: 'question_image' %>
         </div>
         <div class="content">
-          <div class="explanation"><h1 id="hint">どうぶつのなまえをえらぼう!</h1></div>
+          <div class="explanation"><h1 id="hint">イラストのなまえをえらんでね!</h1></div>
           <div class="controller">
             <input type="text" value="" id="result" class="input_form">
             <div class="erase_submit">
@@ -19,15 +19,15 @@
         </div>
       </div>
       <div class="hiragana_area">
-        <% @disp_hiragana.zip(@sounds).each do |hiragana, sound| %>
-          <button type="button" class="hiragana_btn" value="<%= hiragana.name %>">
-            <%= image_tag hiragana.hiragana_image %>
+        <% @disp_katakana.zip(@sounds).each do |katakana, sound| %>
+          <button type="button" class="hiragana_btn" value="<%= katakana.name %>">
+            <%= image_tag katakana.katakana_image %>
             <%= audio_tag("#{sound.sound_file_name}", autobuffer: true, muted: true) %>
           </button>
         <% end %>
       </div>
     </form>
-    <button class="retry_btn" onclick="window.location.reload();">つぎのどうぶつ</button>
+    <button class="retry_btn" onclick="window.location.reload();">つぎのもんだい</button>
   </div>
 
   <div id="modal1" class="modal">
@@ -35,10 +35,10 @@
     <div class="modal-content">
       <p class="message seikai">せいかい！</p>
       <div class="modal_img">
-        <%= image_tag @animal[:animal_image_file_name], class: "animal_image" %>
-        <p class='animal_name'><%= @animal[:name] %></p>
+        <%= image_tag @question[:questions_image_file_name], class: "question_image" %>
+        <p class='question_name'><%= @question[:name] %></p>
       </div>
-      <button class="retry_btn" onclick="window.location.reload();">つぎのどうぶつ</button>
+      <button class="retry_btn" onclick="window.location.reload();">つぎのもんだい</button>
     </div>
   </div>
 
@@ -47,11 +47,11 @@
     <div class="modal-content">
       <p class="message">ちがうよ</p>
       <div class="modal_img">
-        <%= image_tag 'mark_manpu13_kega.png', class: "animal_image" %>
+        <%= image_tag 'mark_manpu13_kega.png', class: "question_image" %>
       </div>
       <button id="back" class="retry_btn">もどる</button>
     </div>
   </div>
 </div>
-<input name="answer" type="hidden" value=<%= @animal[:name] %> id="answer" >
-<input name="answer" type="hidden" value=<%= @animal[:name].length %> id="length" >
+<input name="answer" type="hidden" value=<%= @question[:name] %> id="answer" >
+<input name="answer" type="hidden" value=<%= @question[:name].length %> id="length" >
