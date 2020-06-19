@@ -8,3 +8,7 @@
 2020-03-31 11:32:54.381 JST [7945] STATEMENT:  CREATE DATABASE "animal_face_resp_development" ENCODING = 'unicode'
 2020-03-31 11:32:54.388 JST [7954] ERROR:  database "animal_face_resp_test" already exists
 2020-03-31 11:32:54.388 JST [7954] STATEMENT:  CREATE DATABASE "animal_face_resp_test" ENCODING = 'unicode'
+2020-04-04 15:02:45.063 JST [7843] LOG:  received smart shutdown request
+2020-04-04 15:02:45.066 JST [7843] LOG:  background worker "logical replication launcher" (PID 7850) exited with exit code 1
+2020-04-04 15:02:45.066 JST [7845] LOG:  shutting down
+2020-04-04 15:02:45.081 JST [7843] LOG:  database system is shut down
